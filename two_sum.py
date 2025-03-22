@@ -31,3 +31,8 @@ class OptimizeSolution:
 s1 = OptimizeSolution()
 result = s1.twoSum([2,7,11,15],18)
 print(result)
+
+
+
+
+
