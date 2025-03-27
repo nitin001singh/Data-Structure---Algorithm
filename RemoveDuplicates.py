@@ -7,7 +7,7 @@
 # class Solution:
 #     def removeDuplicates(self, nums):
 #         unique_arr = list(set(nums))
-#         print(unique_arr)
+#         return unique_arr
     
     
 # s = Solution()
