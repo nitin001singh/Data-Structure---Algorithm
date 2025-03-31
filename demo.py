@@ -1,36 +1,23 @@
-class Practise:
-    def resp (self, nums):
-        if not nums:
-            return 0
+class Solution:
+    def answer(self, nums):
+        left = 0
+        right = len(nums) - 1
         
-        n = len(nums)
-        biggestLeft = [1] * n
-        biggestRight = [1] * n
+        maxCapacity = 0
         
-        maxL = 0
-        maxR = 0
-        waterCount = 0
-        
-        for index in range(n):
-            biggestLeft[index] = maxL
-            maxL = max(biggestLeft[index], nums[index])
+        while left < right:
+            width = right - left
+            height = min(nums[left], nums[right])
+            area = width * height
+            maxCapacity = max(maxCapacity, area)
             
-            rightIndex = n - index - 1
-            biggestRight[rightIndex] = maxR
-            maxR = max(biggestRight[rightIndex], nums[rightIndex] )
-            
-        # print(biggestLeft, biggestRight)
-        
-        for index in range(len(nums)):
-            minLevel = min(biggestLeft[index], biggestRight[index]) 
-            if minLevel > nums[index]:
-                waterCount += min(biggestLeft[index], biggestRight[index]) - nums[index]
-            
-        return waterCount
+            if nums[left] < nums[right]:
+                left += 1
+            else :
+                right -= 1
                 
-            
-            
-
+        return maxCapacity             
     
-result = Practise().resp([0,1,0,2,1,0,1,3,2,1,2,1])
+    
+result = Solution().answer([1,8,6,2,5,4,8,3,7])
 print(result)
