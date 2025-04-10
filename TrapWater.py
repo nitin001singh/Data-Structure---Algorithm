@@ -102,7 +102,7 @@ class OptimizeSolution:
             temp1 = max(temp1, height[index])
             
         waterCount= 0
-        for index in range(len(height)):
+        for index in range(n):
             waterCount += max(0,(min(left[index], right[index]) - height[index]))
         
         return waterCount
