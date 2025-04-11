@@ -20,37 +20,35 @@
 # result = Solution().answer(  [-1,0,1,2,-1,-4] )  
 # print(result)   
 
+# Optimal 
 
+# TC : O(n^2)
+# SC : O(k)
 
 class Solution:
-    def answer(self, nums):
-        n = len(nums)
-        if n < 3:
-            return 0
-        nums.sort()
-        result = []
-        for index in range(len(nums)):
-            if index > 0 and nums[index] != nums[index-1]: continue
-            left = index + 1
-            right = n-1
+    def threeSum(self, nums):
+        nums.sort() 
+        hashset = set()
+
+        tar = 0
+        for i in range(len(nums)):
+            ntar = tar - nums[i]
+            
+            left = i +1
+            right = len(nums) - 1
             
             while left < right:
-                total = nums[index] + nums[left] + nums[right]
-                if total < 0:
+                if nums[left] + nums[right] < ntar:
                     left += 1
-                elif total > 0:
+                elif nums[left] + nums[right] > ntar:
                     right -= 1
                 else:
-                    result.append([nums[index], nums[left], nums[right]])
-                    while left < right and nums[left] == nums[left + 1]:
-                        left += 1
-                    while left < right and nums[right] == nums[right - 1]:
-                        right -= 1
+                    hashset.add((nums[i] , nums[left], nums[right]))
                     left += 1
                     right -= 1
                     
-                            
-        return result     
+        return [ list(triplet) for triplet in hashset ]
+ 
         
-result = Solution().answer(  [-1,0,1,2,-1,-4] )  
+result = Solution().threeSum(  [-1,0,1,2,-1,-4] )  
 print(result)   
