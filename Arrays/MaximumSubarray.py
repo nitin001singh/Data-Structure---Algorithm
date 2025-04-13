@@ -19,7 +19,7 @@
                 
             
     
-# result = Solution().maximumSubArray([-1])
+# result = Solution().maximumSubArray([-2,1,-3,4,-1,2,1,-5,4])
 # print(result)
 
 
@@ -50,22 +50,22 @@
 # TC : O(N)
 # SC : O(1)
 
-import sys
-class Solution:
-    def maximumSubArray(self, nums):
-        maxSum = -sys.maxsize-1
-        tempSum = 0
-        for index in range(len(nums)):
-            tempSum += nums[index]
+# import sys
+# class Solution:
+#     def maximumSubArray(self, nums):
+#         maxSum = -sys.maxsize-1
+#         tempSum = 0
+#         for index in range(len(nums)):
+#             tempSum += nums[index]
             
-            if tempSum > maxSum:
-                maxSum = tempSum
+#             if tempSum > maxSum:
+#                 maxSum = tempSum
                 
-            if tempSum < 0:
-                tempSum = 0
+#             if tempSum < 0:
+#                 tempSum = 0
                 
-        return maxSum
+#         return maxSum
             
     
-result = Solution().maximumSubArray([-1])
-print(result)
+# result = Solution().maximumSubArray([-1])
+# print(result)
