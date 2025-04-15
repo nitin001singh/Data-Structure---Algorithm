@@ -20,6 +20,24 @@
 # TC : O(n)
 # SC : O(1)
 
+
+
+# class Solution:
+#     def answer(self, nums):
+        
+#         left = 0        
+#         for right in range(1, len(nums)):
+#             if nums[left] != nums[right]:
+#                 left += 1
+#                 nums[left] = nums[right]
+                
+#         return left+1
+                
+
+# result = Solution().answer(  [1,1,2,2,2,3,3] )  
+# print(result)   
+
+
 class OptimizeSolution:
     def removeDuplicates(self, nums):
         i = 0
@@ -38,3 +56,5 @@ class OptimizeSolution:
 s = OptimizeSolution()
 result = s.removeDuplicates([0,0,1,1,1,2,2,3,3,4])
 print(result)
+
+
