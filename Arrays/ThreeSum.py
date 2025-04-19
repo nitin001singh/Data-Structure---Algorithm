@@ -23,15 +23,15 @@
 # Optimal 
 
 # TC : O(n^2)
-# SC : O(k)
+# SC : O(n^2)
 
 class Solution:
-    def threeSum(self, nums):
+    def threeSum(self, nums, tar):
         nums.sort() 
         hashset = set()
 
-        tar = 0
-        for i in range(len(nums)):
+        # tar = 0
+        for i in range(len(nums)-2):
             ntar = tar - nums[i]
             
             left = i +1
@@ -46,9 +46,9 @@ class Solution:
                     hashset.add((nums[i] , nums[left], nums[right]))
                     left += 1
                     right -= 1
-                    
+                
         return [ list(triplet) for triplet in hashset ]
  
         
-result = Solution().threeSum(  [-1,0,1,2,-1,-4] )  
+result = Solution().threeSum(  [-1,0,1,2,-1,-4] , 0)  
 print(result)   

@@ -50,22 +50,32 @@
 # TC : O(N)
 # SC : O(1)
 
-# import sys
-# class Solution:
-#     def maximumSubArray(self, nums):
-#         maxSum = -sys.maxsize-1
-#         tempSum = 0
-#         for index in range(len(nums)):
-#             tempSum += nums[index]
-            
-#             if tempSum > maxSum:
-#                 maxSum = tempSum
+import sys
+class Solution:
+    def maximumSubArray(self, nums):
+        maxSum = -sys.maxsize - 1
+        tempSum = 0
+        tempStart = 0
+        start = -1
+        end = -1
+
+        for index in range(len(nums)):
+            if tempSum == 0:
+                tempStart = index
                 
-#             if tempSum < 0:
-#                 tempSum = 0
-                
-#         return maxSum
+            tempSum += nums[index]
+
+            if tempSum > maxSum:
+                maxSum = tempSum
+                start = tempStart
+                end = index
+
+            if tempSum < 0:
+                tempSum = 0
+
+        return maxSum, nums[start:end+1]
             
     
-# result = Solution().maximumSubArray([-1])
-# print(result)
+result = Solution().maximumSubArray([-2,1,-3,4,-1,2,1,-5,4])
+print("Max Sum:", result[0])
+print("Subarray:", result[1])

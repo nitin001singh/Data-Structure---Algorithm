@@ -28,6 +28,25 @@
 # print(maxElem, freqCount)
 
 
+
+# from collections import Counter
+
+# def majorityElement(arr):
+#     n = len(arr)
+#     counter = Counter(arr)
+
+#     for num, count in counter.items():
+#         if count > (n // 2):
+#             return num
+
+#     return -1
+
+# arr = [2, 2, 1, 1, 1, 2, 2]
+# ans = majorityElement(arr)
+# print("The majority element is:", ans)
+
+
+
 # Optimal Solution
 # TC : O(N)
 # SC : O(1)
