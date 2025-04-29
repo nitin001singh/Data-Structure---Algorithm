@@ -1,26 +1,14 @@
 class Solution:
-    def answer(self , nums, k):
-        
+    def answer(self, nums1, nums2):
+        nums = nums1 + nums2
         nums.sort()
-        left = 0
-        right = len(nums) - 1
-        maxCount = 0
-        while left < right:
-            
-            if nums[left] + nums[right] == k:
-                maxCount += 1
-                left += 1
-                right -= 1
-            elif nums[left] + nums[right] > k:
-                right -= 1
-            else:
-                left += 1
-                
-        return maxCount 
+        n = len(nums)
         
-        
-        
-        
-         
-result = Solution().answer( [-1,0,1,2,-1,-4] )
+        if n % 2 == 0:
+            return (nums[n//2 - 1] + nums[n//2]) / 2.0 
+        else:
+            return nums[n//2]
+
+    
+result = Solution().answer([1,2], [3,4])
 print(result)
