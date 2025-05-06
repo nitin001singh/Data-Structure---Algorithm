@@ -25,19 +25,14 @@
 
 class Solution:
     def answer(self, nums, k):
-        n = len(nums)
         count = 0
         hashmap = {}
-        for index in range(n):
-            temp = nums[index] + k
-            if temp in hashmap:
-                hashmap[temp] += 1
-                count += 1
-
-            hashmap[nums[index]] = 1
-
+        for num in nums:
+            target = num - k
+            count += hashmap.get(target, 0)
+            hashmap[num] = hashmap.get(num, 0) + 1
         return count
         
         
-response = Solution().answer([1,5,2,4,1],3)
+response = Solution().answer([1,5,2,4,3],2)
 print(response)
