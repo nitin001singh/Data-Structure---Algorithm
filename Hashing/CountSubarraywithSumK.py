@@ -35,6 +35,11 @@ result = Solution().answer([1, 7, 5, 9, 2, 12, 3], 9)
 print(result)
 
 
+# Optimal
+
+# TC : O(N)
+# SC : O(N)
+
 class Solution:
     def answer(self, nums, k):
         cumSum = 0
