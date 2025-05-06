@@ -25,12 +25,9 @@ class Solution:
         for index in range(1, n):
             prefixSum[index] =  prefixSum[index - 1] + nums[index]
             
-        
         sumFroml2R = prefixSum[r] - prefixSum[l-1] 
-        
-        
+    
         return sumFroml2R 
-        
         
         
 result = Solution().answer([1, 7, 5, 9, 2, 12, 3] , 2 , 3)
