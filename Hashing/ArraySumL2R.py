@@ -12,6 +12,9 @@
 # print(result)
 
 
+# Optimal 
+# TC : O(N+Q)  => O(N)
+# SC : O(N)
 
 
 class Solution:
