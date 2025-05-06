@@ -37,15 +37,15 @@ print(result)
 
 class Solution:
     def answer(self, nums, k):
-        summ = 0
+        cumSum = 0
         count = 0
-        prefix_sum_count = {0: 1}
+        hashmap = {0: 1}
 
         for num in nums:
-            summ += num
-            if (summ - k) in prefix_sum_count:
-                count += prefix_sum_count[summ - k]
-            prefix_sum_count[summ] = prefix_sum_count.get(summ, 0) + 1
+            cumSum += num
+            if (cumSum - k) in hashmap:
+                count += hashmap[cumSum - k]
+            hashmap[cumSum] = hashmap.get(cumSum, 0) + 1
 
         return count
 
