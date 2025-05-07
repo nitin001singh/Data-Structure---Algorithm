@@ -29,10 +29,13 @@ class Solution:
         hashmap = {}
         for num in nums:
             target = num - k
-            count += hashmap.get(target, 0)
-            hashmap[num] = hashmap.get(num, 0) + 1
+            if target in hashmap:
+                count += hashmap[target]
+                
+            hashmap[num] = 1
         return count
         
         
-response = Solution().answer([1,5,2,4,3],2)
+response = Solution().answer([1,5,2,4,3,2],2)
 print(response)
+
