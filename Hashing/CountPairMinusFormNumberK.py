@@ -30,23 +30,24 @@
 class Solution:
     def answer(self, nums, k):
         count = 0
-        freq = {}
+        hashmap = {}
     
-        for j in range(len(nums)):
-            
-            if nums[j] - k in freq:
-                count += freq[nums[j] - k]
+        for num in nums:
+            target_minus = num - k
+            target_plus = num + k
+            if target_minus in hashmap:
+                count += hashmap[target_minus]
                 
-            if k != 0 and nums[j] + k in freq: 
-                count += freq[nums[j] + k]
+            if k != 0 and target_plus in hashmap: 
+                count += hashmap[target_plus]
     
-            if nums[j] in freq:
-                freq[nums[j]] += 1
+            if num in hashmap:
+                hashmap[num] += 1
             else:
-                freq[nums[j]] = 1
+                hashmap[num] = 1
     
         return count
         
                 
-result = Solution().answer([1, 7, 5, 9, 2, 12, 3], 2)
+result = Solution().answer([3,1,4,1,5], 2)
 print(result)

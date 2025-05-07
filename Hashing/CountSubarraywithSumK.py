@@ -1,4 +1,4 @@
-# Generate all Subarray
+# # Generate all Subarray
 
 # def generate_all_subarrays(nums):
 #     n = len(nums)
