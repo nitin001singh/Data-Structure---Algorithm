@@ -1,5 +1,9 @@
+
+# Tc : O(M * N)
+# SC : O(1)
+
 class Solution:
-    def commonChars(self, words):
+    def commonChars(self, words):       
         min_freq = [100] * 26 
         
         for word in words:
@@ -12,7 +16,7 @@ class Solution:
 
         result = []
         for i in range(26):
-            result.extend(   [chr(i + ord('a'))]   *   min_freq[i]   )
+            result.extend(   [chr(i + ord('a'))]   *   min_freq[i]   )    
 
         return result
 
