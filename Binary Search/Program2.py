@@ -33,22 +33,22 @@ print(result)
 
 class Solution:
     def answer(self, nums, x):
-        low = 0
-        high = len(nums) - 1
+        left = 0
+        right = len(nums) - 1
         result = -1
 
-        while low <= high:
-            mid = (low + high) // 2
+        while left <= right:
+            mid = (left + right) // 2
             if nums[mid] > x:
                 result = mid
-                high = mid - 1
+                right = mid - 1
             else:
-                low = mid + 1
+                left = mid + 1
 
         return result
                             
                 
     
     
-result = Solution().answer([2, 5, 6, 7, 8, 8, 9,9,15, 19, 22, 32], 17)
+result = Solution().answer( [1, 3, 5, 6, 6, 7, 7, 9], 6)
 print(result)
