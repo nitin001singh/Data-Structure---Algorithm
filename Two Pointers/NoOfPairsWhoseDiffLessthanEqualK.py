@@ -27,11 +27,20 @@
 class Solution:
     def answer(self, nums, k):
         count = 0
-        left = 0
         n = len(nums)
+        nums.sort()
+        left = 0
+        right = 0
         for right in range(n):
+            diff = nums[right] - nums[left]
+            while diff > k:
+                left += 1
+                diff = nums[right] - nums[left]
+            count += right - left + 1
+            right += 1
             
-            
+        return count - n
+                
         
 
 result = Solution().answer([1 ,2 ,3 , 4, 5], 2)
