@@ -1,3 +1,6 @@
+# TC : O(log2(N))
+# SC : O(1)
+
 class Solution:
     def answer(self, nums, k):
         nums.sort()
