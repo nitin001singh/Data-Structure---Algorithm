@@ -1,4 +1,4 @@
-# Given a sorted array of size “N”; find the index of the number in the array which is just greater than x and as close as possible to x.
+# Given a sorted numsay of size “N”; find the index of the number in the array which is just greater than x and as close as possible to x.
 
 # -> Upper Bound (x) = Returns index of the number which is just greater than x and as close as possible to x.
 
@@ -11,16 +11,15 @@
 
 class Solution:
     def answer(self, nums, target):
-        closest = nums[0]
-        min_diff = abs(nums[0] - target)
-        
-        for num in nums:
-            diff = abs(num - target)
-            if diff < min_diff:
-                min_diff = diff
-                closest = num
-                
-        return closest
+        index = -1
+        min_diff = float('inf')
+
+        for i in range(len(nums)):
+            if nums[i] > target and (nums[i] -target < min_diff):
+                index = i
+                min_diff = nums[i] - target
+
+        return index
                             
 result = Solution().answer([1, 3, 5, 7, 9, 11], 6)
 print(result)
@@ -34,22 +33,22 @@ print(result)
 
 class Solution:
     def answer(self, nums, x):
-        l = 0
-        r = len(nums) - 1
-        opt = -1
-        while l <= r:
-            mid = (l + r) // 2
-            
+        low = 0
+        high = len(nums) - 1
+        result = -1
+
+        while low <= high:
+            mid = (low + high) // 2
             if nums[mid] > x:
-                opt = mid 
-                r = mid - 1 
+                result = mid
+                high = mid - 1
             else:
-                l = mid + 1
-        
-        return opt 
+                low = mid + 1
+
+        return result
                             
                 
     
     
-result = Solution().answer([1, 3, 5, 6, 6, 7, 7, 9], 6)
+result = Solution().answer([2, 5, 6, 7, 8, 8, 9,9,15, 19, 22, 32], 17)
 print(result)
