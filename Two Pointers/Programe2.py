@@ -1,3 +1,5 @@
+# Number of subarrays whose count of distinct number <= K
+
 # Tc : O(N^2)
 # Tc : O(1)
 
