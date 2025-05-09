@@ -28,7 +28,6 @@ This repo contains my personal implementations of various DSA problems using **P
 
 - **Language:** Python 3
 - **Editor:** VS Code / Jupyter Notebook
-- **Version Control:** Git + GitHub
 
 ---
 
