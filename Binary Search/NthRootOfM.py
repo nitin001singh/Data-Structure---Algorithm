@@ -19,7 +19,6 @@
 
 
 class Solution:
-        
     def answer(self, m,n):
         l = 1 
         r = m
