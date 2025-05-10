@@ -4,13 +4,13 @@
 class Solution:
     def answer(self, num1, num2):
         num1.sort()
-        num2.sort()
+        num2.sort(reverse=True)
         
         mul = 0
         for i in range(len(num1)):
             mul += (num1[i] * num2[i])
             
-        return mul, num1, num2
+        return mul
     
 result = Solution().answer([1, 3, -5], [-2, 4, 1])
 print(result) 
