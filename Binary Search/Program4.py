@@ -23,5 +23,5 @@ class Solution:
         return nums[left]
 
 
-result = Solution().answer( [1,1,2,3,3,4,4,8,8])
+result = Solution().answer( [1,1,2,2,3,4,4,8,8])
 print(result)
