@@ -80,5 +80,4 @@ class Solution:
             right_part = (total_sum - prefix[idx + 1]) - target * (n - idx - 1)
             print(f"Minimum operations for target {target}: {left_part + right_part}")
 
-# Run the solution
 result = Solution().answer([], 0)
