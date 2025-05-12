@@ -1,5 +1,9 @@
 # Frog - 1 
 
+# TC :- O(N)
+# SC :- O(N) (dp[n]) 
+
+
 class Solution:
     def answer(self, a):
         n = len(a)
