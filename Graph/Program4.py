@@ -35,6 +35,5 @@ class Solution:
         for i in range(1, n + 1):
             print(f"Node {i}: {ways[i]} shortest path(s)")
 
-# Example Run
-# Input edges: 1-2, 2-3, 2-4, 3-5
+
 result = Solution().answer(5, 4, 1)
