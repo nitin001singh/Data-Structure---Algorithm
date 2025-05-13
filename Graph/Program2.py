@@ -14,8 +14,9 @@ class Solution:
         q.put(start_node)
 
         used = [0] * (n+1)
-        used[start_node] = 1
         level = [0] * (n+1)
+        used[start_node] = 1
+        level[start_node] = 0
         
         while not q.empty():
             x = q.get()
