@@ -18,6 +18,7 @@ def power(base, exp, mod):
 def precompute():
     for i in range(1, MAXN + 1):
         fact[i] = (fact[i - 1] * i) % MOD
+        
     ifact[MAXN] = power(fact[MAXN], MOD - 2, MOD)  # Fermat's theorem
     for i in range(MAXN - 1, 0, -1):
         ifact[i] = (ifact[i + 1] * (i + 1)) % MOD
