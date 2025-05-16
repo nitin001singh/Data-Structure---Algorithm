@@ -10,7 +10,7 @@ class Solution:
         n = int(input("Enter number of nodes : "))
         m = int(input("Enter number of edges : "))
         
-        matrix = [[0] for _ in range(n)]
+        matrix = [[0] * n for _ in range(n)]
         # return matrix
         
         for i in range(m):
