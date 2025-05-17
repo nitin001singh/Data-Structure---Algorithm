@@ -19,7 +19,7 @@ n = int(input("Enter number of nodes: "))
 G = [[] for _ in range(n + 1)]
 height = [0] * (n + 1)
 print(f"Enter {n-1} edges (u v):")
-for _ in range(n - 1):
+for _ in range(1,n):
     u, v = map(int, input().split())
     G[u].append(v)
     G[v].append(u)
@@ -30,4 +30,4 @@ parent = [0] * (n + 1)
 DFS(1, G, used, parent, height)
 
 for i in range(1, n + 1):
-    print(f"Node {i}: {height[i] - 1}")
+    print(f"Node {i}: {height[i]}")

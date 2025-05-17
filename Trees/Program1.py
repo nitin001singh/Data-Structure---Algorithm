@@ -3,7 +3,7 @@ from queue import Queue
 n = int(input("Enter number of nodes: "))
 G = [[] for _ in range(n + 1)]
 
-for _ in range(n - 1):
+for _ in range(1,n):
     x, y = map(int, input().split())
     G[x].append(y)
     G[y].append(x)

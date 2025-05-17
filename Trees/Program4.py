@@ -25,7 +25,7 @@ if __name__ == "__main__":
         b[i] = int(input())
 
     G = [[] for _ in range(n + 1)]  # Adjacency list
-    for _ in range(n - 1):
+    for _ in range(1,n):
         u, v = map(int, input().split())
         G[u].append(v)
         G[v].append(u)
