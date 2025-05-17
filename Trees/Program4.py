@@ -1,42 +1,42 @@
 # Given a Tree of N Nodes, rooted at node 1 find the maximum sum of subtree possible.
 # 
-
-def DFS(node, G, used, parent, subtree_sum, b):
+def DFS(node, G, used, parent, sum):
     used[node] = 1
 
-    for child in G[node]:
-        if not used[child]:
-            parent[child] = node
-            DFS(child, G, used, parent, subtree_sum, b)
+    for u in G[node]:
+        if used[u] == 0:
+            parent[u] = node
+            DFS(u, G, used, parent, sum)
 
-    total = 0
+    s = 0
     for child in G[node]:
         if child != parent[node]:
-            total += subtree_sum[child]
+            s += sum[child]
+            
 
-    subtree_sum[node] = b[node] + total
+    sum[node] = b[node] + s
 
 
 if __name__ == "__main__":
-    n = int(input())
+    n = int(input( "Enter number of nodes : "))
+    b = [0] * (n + 1)
+    sum = [0] * (n + 1)
+    G = [[] for _ in range(n + 1)]
 
-    b = [0] * (n + 1)  # Node values (1-based indexing)
     for i in range(1, n + 1):
-        b[i] = int(input())
+        b[i] = int(input(" Enter the weight : "))
 
-    G = [[] for _ in range(n + 1)]  # Adjacency list
     for _ in range(1,n):
-        u, v = map(int, input().split())
+        u, v = map(int, input(" Enter u and v space separated : ").split())
         G[u].append(v)
         G[v].append(u)
 
     used = [0] * (n + 1)
     parent = [0] * (n + 1)
-    subtree_sum = [0] * (n + 1)
+    DFS(1, G, used, parent, sum)
 
-    # Run DFS to compute subtree sums
-    DFS(1, G, used, parent, subtree_sum, b)
+    answer = float("-inf")
+    for i in range(1, n + 1):
+        answer = max(answer, sum[i])
 
-    # Find the maximum subtree sum
-    max_sum = max(subtree_sum[1:])
-    print(max_sum)
+    print(answer)
