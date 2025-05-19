@@ -30,9 +30,9 @@ class Solution:
         for num in nums:
             target = num - k
             if target in hashmap:
-                count += hashmap[target]
+                count += 1
                 
-            hashmap[num] = 1
+            hashmap[num] = hashmap.get(num, 0) + 1
         return count
         
         
