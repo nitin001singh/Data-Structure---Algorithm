@@ -41,7 +41,7 @@ class Solution:
         length = 0
         n = len(nums)
         hashmap = {}
-        hashmap[0] = 1
+        # hashmap[0] = 1
         for i in range(n):
             summ += nums[i]
             if summ == k:
