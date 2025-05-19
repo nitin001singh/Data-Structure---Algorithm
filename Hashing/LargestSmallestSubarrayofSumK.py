@@ -41,7 +41,7 @@ class Solution:
         length = 0
         n = len(nums)
         hashmap = {}
-        # hashmap[0] = 1
+        hashmap = {0: -1}
         for i in range(n):
             summ += nums[i]
             if summ == k:
@@ -55,7 +55,30 @@ class Solution:
                 
             
         return length
+    
+    
+    def smallest(self , nums, k ):
+        
+        summ = 0
+        length = float("inf")
+        n = len(nums)
+        hashmap = {}
+        hashmap = {0: -1}
+        for i in range(n):
+            summ += nums[i]
+            if summ == k:
+                length = min(length, i+1)
+            
+            if summ not in hashmap:
+                hashmap[summ] = i
+                
+            if summ - k in hashmap:
+                length = min(length, i-hashmap[summ-k])
+                
+            
+        return length
             
         
 result = Solution().answer([1, 2, 3, 4, 5, -1, 6], 9)
-print(result)
+result1 = Solution().smallest([1, 2, 3, 4, 5, -1, 6], 9)
+print(result,', ' ,result1)
