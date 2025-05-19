@@ -6,8 +6,8 @@ class Solution:
         if n == 0:
             return 0
         
-        prefixSumm = self.getPrefixSum(nums)
-        suffixSumm = self.getSuffixSum(nums)
+        prefixSumm = self.getPrefixMaximumSubarraySum(nums)
+        suffixSumm = self.getSuffixMaximumSubarraySum(nums)
         
         max_total = float('-inf')
         for i in range(n - 1):
@@ -15,7 +15,7 @@ class Solution:
 
         return prefixSumm, suffixSumm, max_total
         
-    def getPrefixSum(self, nums):
+    def getPrefixMaximumSubarraySum(self, nums):
         n = len(nums)
         pSum = [0] * n
         currentMax = nums[0]
@@ -27,7 +27,7 @@ class Solution:
         
         return pSum
             
-    def getSuffixSum(self, nums):
+    def getSuffixMaximumSubarraySum(self, nums):
         n = len(nums)
         sSum = [0] * n
         currentMax = nums[-1]
