@@ -38,7 +38,7 @@ print(result)
 
 # Optimal
 # TC : O(N)
-# SC : O(1)
+# SC : O(81)  => O(1)
 
 class Solution:
     def answer(self, nums):
