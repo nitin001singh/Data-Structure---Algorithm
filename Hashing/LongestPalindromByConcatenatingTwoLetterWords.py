@@ -1,3 +1,6 @@
+# TC : O(N)
+# SC : O(N)
+
 class Solution:
     def answer(self, words):
         ans = 0
