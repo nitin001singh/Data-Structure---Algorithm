@@ -4,15 +4,11 @@
 
 class Solution:
     def answer(self, lamps, points):
-        b = []
-        for lamp in lamps:
-            b.extend(lamp)
-            
-            
-        lamp = [0] * (max(b) + 5)
+
+        size = 100000    #size: 10^5
+        lamp = [0] * size
         
-        for inputval in lamps:
-            l , r = inputval
+        for l , r in lamps:
             lamp[l] += 1
             lamp[r+1] -= 1
 
