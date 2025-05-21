@@ -9,8 +9,6 @@ class Solution:
             diff.append(  x - y  )
             constantPart += (y * n) - x
             
-
-        diff.sort(reverse=True)
         
         variable_part = 0
         for i in range(n):
