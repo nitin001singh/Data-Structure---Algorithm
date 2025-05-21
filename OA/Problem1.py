@@ -1,5 +1,9 @@
 # https://leetcode.com/discuss/post/3114099/amazon-oa-intern-2024-by-anonymous_user-57od/
 
+# Tc: O(len(s) + len(t))
+# SC : O(K) where K = unique characters in s+t
+
+
 class Solution:
     def answer(self, s,t):
         hashmap1 = {}
@@ -21,5 +25,5 @@ class Solution:
        
         return count
         
-result = Solution().answer('mononmmo','mon')
+result = Solution().answer('abcbacbbac','abbc')
 print(result)
