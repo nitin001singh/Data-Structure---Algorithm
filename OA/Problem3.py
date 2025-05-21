@@ -1,6 +1,6 @@
 # Range Updater
 
-# Tc: O(N)
+# Tc: O(m + n)    => n = len(nums) ,m = len(rangearr)
 # SC : O(1)
 
 
