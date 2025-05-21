@@ -9,7 +9,8 @@ class Solution:
         for rlist in rangearr:
             l, r  = rlist
             nums[l] += 1
-            nums[r+1] += -1
+            if r+1 <= len(nums)-1:
+                nums[r+1] += -1
             
 
         for x in range(1, len(nums)):
