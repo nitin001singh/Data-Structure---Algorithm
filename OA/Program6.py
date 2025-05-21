@@ -1,4 +1,8 @@
 
+# TC : O(N + 1440 + 1440)   =>  O(N)
+# SC : O(1440)   = > O(1)
+
+
 class Solution:
     
     def answer(self, actionList, k):
