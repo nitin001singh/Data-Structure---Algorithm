@@ -1,5 +1,5 @@
 # Tc: O(m + n)    => n = len(nums) ,m = len(points)
-# SC : O(N)
+# SC : O(10^5)
 
 
 class Solution:
