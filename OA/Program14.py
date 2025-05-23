@@ -26,44 +26,37 @@ print(result)
 # TC : O(N^2 +  N^2 + N)
 # SC : O(2N)
 
-
 class Solution:
     def answer(self, nums):
         n = len(nums)
-        pSum = [0] * n
-        sSum = [0] * n
-        
-        pSum[0] = 0
-       
-        for j in range(1, n):
-            i = 0
-            c = 0
-            while i <= j-1:
+        pref = [0] * n
+        suff = [0] * n
+
+        # Build prefix counts
+        for j in range(n):
+            count = 0
+            for i in range(j):
                 if nums[i] > nums[j]:
-                    c += 1
-                i += 1
-            
-            pSum[j] = c    
+                    count += 1
+            pref[j] = count
 
+        # Build suffix counts
+        for k in range(n):
+            count = 0
+            for l in range(k + 1, n):
+                if nums[k] > nums[l]:
+                    count += 1
+            suff[k] = count
 
-        sSum[n-1] = 0
-        for j in range(n-2, -1, -1):
-            k = j+1
-            c = 0
-            while k <= n-1:
+        # Calculate total valid quadruplets
+        total = 0
+        for j in range(n):
+            for k in range(j + 1, n):
                 if nums[j] < nums[k]:
-                    c += 1
-                k += 1
-            
-            sSum[j] = c    
+                    total += pref[j] * suff[k]
 
+        return pref, suff, total
 
-        count = 0
-        
-        for x in range(n):
-            count += pSum[x] * sSum[x]
-            
-        return pSum, sSum, count
 
 result = Solution().answer([8,1,2,3,4,5])
 print(result)
