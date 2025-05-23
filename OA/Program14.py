@@ -23,6 +23,10 @@ print(result)
 
 
 
+# TC : O(N^2 +  N^2 + N)
+# SC : O(2N)
+
+
 class Solution:
     def answer(self, nums):
         n = len(nums)
@@ -64,3 +68,39 @@ class Solution:
 result = Solution().answer([8,1,2,3,4,5])
 print(result)
 
+
+
+# Follow up :-> Given an array of size “N”; find the number of quadruplets; such that A[i] > A[j] < A[k] >A[l] such that i < j < k < l ; 
+
+
+class Solution:
+    def answer(self, A):
+        n = len(A)
+        pref = [0] * n
+        suff = [0] * n
+
+        # Compute pref[j]: how many i < j such that A[i] > A[j]
+        for j in range(n):
+            for i in range(j):
+                if A[i] > A[j]:
+                    pref[j] += 1
+
+        # Compute suff[k]: how many l > k such that A[k] > A[l]
+        for k in range(n):
+            for l in range(k + 1, n):
+                if A[k] > A[l]:
+                    suff[k] += 1
+
+
+        # print(pref, suff)
+        # Count valid pairs (j, k)
+        count = 0
+        for j in range(n):
+            for k in range(j + 1, n):
+                if A[j] < A[k]:
+                    count += pref[j] * suff[k]
+
+        return count
+
+
+print(Solution().answer([8, 1, 2, 3, 4, 5]))
