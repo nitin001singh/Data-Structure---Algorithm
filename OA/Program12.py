@@ -1,3 +1,6 @@
+# TC : O(M + N)
+# SC : O(N)
+
 class Solution:
     def answer(self):
         n = int(input("Enter the number of elements : "))
